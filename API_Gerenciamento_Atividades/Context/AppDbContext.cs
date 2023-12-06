@@ -9,10 +9,5 @@ namespace API_Gerenciamento_Atividades.Context
         {}
 
         public DbSet<Atividades> Atividades { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }
