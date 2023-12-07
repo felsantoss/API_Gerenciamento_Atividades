@@ -38,14 +38,20 @@ namespace API_Gerenciamento_Atividades.Controllers
         [Route("{ID}")] // Este GET passando como parametro um ID, é retornado um ID especifico do banco de dados
         public async Task<ActionResult<Atividades>> getAtividadeByID(int ID)
         {
-            var atividade = await _context.Atividades.FindAsync(ID);
-
-            if (atividade == null)
+            try
             {
-                return NotFound();
-            }
+                var atividade = await _context.Atividades.FindAsync(ID);
 
-            return atividade;
+                if (atividade == null)
+                {
+                    return StatusCode(400, "ID não localizado");
+                }
+
+                return atividade;
+            }
+            catch (Exception ex) {
+                return StatusCode(500, "Erro interno no servidor");
+            }
         }
     } 
 }
