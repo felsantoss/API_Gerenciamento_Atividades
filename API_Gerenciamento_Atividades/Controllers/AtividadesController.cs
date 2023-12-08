@@ -89,6 +89,8 @@ namespace API_Gerenciamento_Atividades.Controllers
         {
             return (_context.Atividades?.Any(e => e.ID == id)).GetValueOrDefault();
         }
+
+        
     } 
 
 }
