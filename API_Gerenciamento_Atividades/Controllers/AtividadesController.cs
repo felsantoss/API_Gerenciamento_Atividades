@@ -44,7 +44,7 @@ namespace API_Gerenciamento_Atividades.Controllers
 
                 if (atividade == null)
                 {
-                    return StatusCode(400, "ERRO! ID não localizado");
+                    return StatusCode(400, $"ERRO! ID {ID} não localizado");
                 }
 
                 return atividade;
@@ -54,5 +54,41 @@ namespace API_Gerenciamento_Atividades.Controllers
                 return StatusCode(500, "Erro interno no servidor");
             }
         }
+
+        [HttpPut]
+        [Route("{ID}")]
+        public async Task<ActionResult<Atividades>> putAtividades(int ID, Atividades atividades)
+        {
+            if (ID != atividades.ID)
+            {
+                return BadRequest($"ERRO! ID {ID} não localizado na base de dados");
+            }
+
+            _context.Entry(atividades).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AtividadesExists(ID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+
+        }
+        private bool AtividadesExists(int id)
+        {
+            return (_context.Atividades?.Any(e => e.ID == id)).GetValueOrDefault();
+        }
     } 
+
 }
