@@ -90,14 +90,6 @@ namespace API_Gerenciamento_Atividades.Controllers
             return (_context.Atividades?.Any(e => e.ID == id)).GetValueOrDefault();
         }
 
-        
-    } 
 
-                return atividade;
-            }
-            catch (Exception ex) {
-                return StatusCode(500, "Erro interno no servidor");
-            }
-        }
-    } 
+    }
 }
