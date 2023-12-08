@@ -90,6 +90,14 @@ namespace API_Gerenciamento_Atividades.Controllers
             return (_context.Atividades?.Any(e => e.ID == id)).GetValueOrDefault();
         }
 
+        [HttpPost] 
+        public async Task<ActionResult<Atividades>> postAtividades(Atividades atividades)
+        {
+            _context.Atividades.Add(atividades);
+            await _context.SaveChangesAsync();
 
+            return CreatedAtAction(nameof(getAtividadeByID), new { id = atividades.ID }, atividades);
+        }
+        
     }
 }
