@@ -55,7 +55,7 @@ namespace API_Gerenciamento_Atividades.Controllers
             }
         }
 
-        [HttpPut]
+        /* [HttpPut]
         [Route("{ID}")] // O putAtividades valida se um ID existe no banco de dados e se existir ele atualiza as informações que foram fornecidas 
         public async Task<ActionResult<Atividades>> putAtividades(int ID, Atividades atividades)
         {
@@ -84,19 +84,58 @@ namespace API_Gerenciamento_Atividades.Controllers
 
             return NoContent();
 
-        }
+        } */
+
         private bool AtividadesExists(int id)
         {
             return (_context.Atividades?.Any(e => e.ID == id)).GetValueOrDefault();
         }
 
-        [HttpPost] 
-        public async Task<ActionResult<Atividades>> postAtividades(Atividades atividades)
+        [HttpPost] // Método postAtividades cria e atualizar atividades no banco de dados 
+        public async Task<ActionResult<Atividades>> postAtividades([FromBody] Atividades atividades)
         {
-            _context.Atividades.Add(atividades);
-            await _context.SaveChangesAsync();
+            try
+            {
+                if (atividades.ID != 0)
+                {
+                    var atividadeExiste = await _context.Atividades.FindAsync(atividades.ID);
 
-            return CreatedAtAction(nameof(getAtividadeByID), new { id = atividades.ID }, atividades);
+                    if (atividadeExiste != null)
+                    {
+                        atividadeExiste.Titulo = atividades.Titulo;
+                        atividadeExiste.Descricao = atividades.Descricao;
+                        atividadeExiste.Status = atividades.Status;
+
+                        await _context.SaveChangesAsync();
+
+                        return Ok("Sucesso! ID atualizado com sucesso");
+                    }
+                    else
+                    {
+                        return BadRequest("ERRO! ID não localizado");
+                    }
+                }
+                else
+                {
+                    if (await _context.Atividades.AnyAsync(a => a.Titulo == atividades.Titulo && a.Descricao == atividades.Descricao))
+                    {
+                        return BadRequest("ERRO! ID já cadastrado com este título e descrição");
+                    }
+                    else
+                    {
+                        atividades.DataCriacao = DateTime.Now; // criando a atividade com a data atual 
+                        _context.Atividades.Add(atividades);
+                        await _context.SaveChangesAsync();
+
+                        return CreatedAtAction(nameof(getAtividadeByID), new { id = atividades.ID }, atividades);
+                    }
+                }       
+            } 
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro interno no servidor");
+            }
+            
         }
         
     }
