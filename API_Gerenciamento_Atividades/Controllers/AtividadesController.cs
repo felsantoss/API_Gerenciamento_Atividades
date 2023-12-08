@@ -56,12 +56,12 @@ namespace API_Gerenciamento_Atividades.Controllers
         }
 
         [HttpPut]
-        [Route("{ID}")]
+        [Route("{ID}")] // O putAtividades valida se um ID existe no banco de dados e se existir ele atualiza as informações que foram fornecidas 
         public async Task<ActionResult<Atividades>> putAtividades(int ID, Atividades atividades)
         {
             if (ID != atividades.ID)
             {
-                return BadRequest($"ERRO! ID {ID} não localizado na base de dados");
+                return StatusCode(400, $"ERRO! ID {ID} não localizado na base de dados");
             }
 
             _context.Entry(atividades).State = EntityState.Modified;
