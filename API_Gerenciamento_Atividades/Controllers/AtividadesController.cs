@@ -55,11 +55,6 @@ namespace API_Gerenciamento_Atividades.Controllers
             }
         }
 
-        private bool AtividadesExists(int id)
-        {
-            return (_context.Atividades?.Any(e => e.ID == id)).GetValueOrDefault();
-        }
-
         [HttpPost] // Método postAtividades cria e atualizar atividades no banco de dados 
         public async Task<ActionResult<Atividades>> postAtividades([FromBody] Atividades atividades)
         {
