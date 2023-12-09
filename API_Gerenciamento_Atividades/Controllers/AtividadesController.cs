@@ -122,8 +122,7 @@ namespace API_Gerenciamento_Atividades.Controllers
                         return BadRequest("ERRO! ID já cadastrado com este título e descrição");
                     }
                     else
-                    {
-                        atividades.DataCriacao = DateTime.Now; // criando a atividade com a data atual 
+                    { 
                         _context.Atividades.Add(atividades);
                         await _context.SaveChangesAsync();
 

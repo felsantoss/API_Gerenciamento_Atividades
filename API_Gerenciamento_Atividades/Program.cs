@@ -1,5 +1,7 @@
 using API_Gerenciamento_Atividades.Context;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using System.Text.RegularExpressions;
 
 var builder = WebApplication.CreateBuilder(args);
 
