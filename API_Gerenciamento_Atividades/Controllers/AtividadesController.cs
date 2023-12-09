@@ -26,12 +26,19 @@ namespace API_Gerenciamento_Atividades.Controllers
         [HttpGet] // este GET ele retorna todos os IDs cadastrados no banco de dados
         public async Task<ActionResult<IEnumerable<Atividades>>> getTodosIDs()
         {
-            if (_context.Atividades == null)
+            try
             {
-                return NotFound();
-            }
+                if (_context.Atividades == null)
+                {
+                    return NotFound();
+                }
 
-            return await _context.Atividades.ToListAsync();
+                return await _context.Atividades.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Erro interno no servidor");
+            }
         }
 
         [HttpGet]
