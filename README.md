@@ -101,4 +101,5 @@ Iremos usar como exemplo a última atividade cadastrada com o ID 14. Para isso v
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/c924bf6e-9ead-47a8-b13c-8fbd0d840b2b)
 
 Projeto iniciado - 04/12/2023 🏳
+
 Projeto finalizado - 10/12/2023 🏁
