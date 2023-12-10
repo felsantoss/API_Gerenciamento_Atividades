@@ -1,4 +1,4 @@
-# API_Gerenciamento_Atividades
+# API Gerenciamento de Atividades
 
 Objetivo: Desenvolvimento de uma API para gerenciamento de atividades diversas utilizando .NET Core e armazenando informações em um banco de dados MySQL.
 
