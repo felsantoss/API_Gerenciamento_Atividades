@@ -4,7 +4,7 @@ Objetivo: Desenvolvimento de uma API para gerenciamento de atividades diversas u
 
 Tecnonologias Utilizadas: C#, .NET Core, Entity Framework Core, MySQL, Postman, Git, Github.
 
-A API conta com o método GET para obter todos os dados armazenados no banco de dados, outro método GET para obter uma informação específica e o método POST para conseguir criar a atualizar informações no banco de dados. 
+A API conta com o método GET para obter todos os dados armazenados no banco de dados, outro método GET para obter uma informação específica e o método POST para conseguir criar e atualizar informações no banco de dados. 
 
 ## Obtendo todas as atividades do banco de dados
 
@@ -37,29 +37,29 @@ Utilizando a URL abaixo será possível criar uma nova atividade no banco de dad
 
 URL: POST https://localhost:7258/api/Atividades
 
-Abaixo está o passo a passo para criar uma nova atividade dentro da plataforma, estarei utilizando a plataforma Postman como exemplo: 
+Abaixo está o passo a passo para criar uma nova atividade no banco de dados, estarei utilizando a plataforma Postman como exemplo: 
 
-- selecione o método POST e coloque a URl: https://localhost:7258/api/Atividades
+- Selecione o método POST e coloque a URl: https://localhost:7258/api/Atividades
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/b5e66319-a450-47db-8b8c-b565b2cf6ab1)
 
-- selecione a opção Body e preencha conforme abaixo:
+- Selecione a opção Body e preencha conforme abaixo:
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/df7d256f-1aac-4beb-9a6f-803af7d74234)
 
-- feito isso deixamos o ID zerado e preenchemos os demais campos
+- Feito isso deixamos o ID zerado e preenchemos os demais campos
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/74e84dae-9f0c-4755-872b-3f0dc268a9e9)
 
-- mudamos o tipo do arquivo para JSON
+- Mudamos o tipo do arquivo para JSON
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/643d0f5a-ba3e-4786-b161-332f0397c099)
 
-- com todas informações preenchidas podemos clicar em "Send"
+- Com todas informações preenchidas podemos clicar em "Send"
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/68386c9b-2950-40b8-bee3-e83025508057)
 
-- é criado um novo ID com as informações fornecidas
+- É criado um novo ID com as informações fornecidas
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/f7e5c6fb-39e1-4979-9158-5d96d7d8a1f9)
 
@@ -99,3 +99,6 @@ Iremos usar como exemplo a última atividade cadastrada com o ID 14. Para isso v
 - GET do ID 14 atualizado
 
 ![image](https://github.com/felsantoss/API_Gerenciamento_Atividades/assets/92893574/c924bf6e-9ead-47a8-b13c-8fbd0d840b2b)
+
+Projeto iniciado - 04/12/2023 🏳
+Projeto finalizado - 10/12/2023 🏁
