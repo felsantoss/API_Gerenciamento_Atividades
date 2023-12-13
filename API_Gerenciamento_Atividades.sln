@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Gerenciamento_Atividades", "API_Gerenciamento_Atividades\API_Gerenciamento_Atividades.csproj", "{EFB4B9C0-1434-4639-B005-33E0B669DE0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Gerenciamento_Atividades", "API_Gerenciamento_Atividades\API_Gerenciamento_Atividades.csproj", "{EFB4B9C0-1434-4639-B005-33E0B669DE0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Gerenciamento_Atividades_Test", "API_Gerenciamento_Atividades_Test\API_Gerenciamento_Atividades_Test.csproj", "{BBB9E1BE-5D5F-42EA-84C9-4BFACBDE254E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EFB4B9C0-1434-4639-B005-33E0B669DE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFB4B9C0-1434-4639-B005-33E0B669DE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFB4B9C0-1434-4639-B005-33E0B669DE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB9E1BE-5D5F-42EA-84C9-4BFACBDE254E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB9E1BE-5D5F-42EA-84C9-4BFACBDE254E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB9E1BE-5D5F-42EA-84C9-4BFACBDE254E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB9E1BE-5D5F-42EA-84C9-4BFACBDE254E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
